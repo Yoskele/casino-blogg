@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %} Casinoblogg.se hjälper dig att hitta rätt i casinodjungeln {% endblock %}
+{% block extra_head %}
+<meta name="description" content="Online casinovärlden fortsätter att växa. Om du vill synas kan du
+lägga upp egna annonser som har med svenska spelmarknaden att göra på Casinobloggen.se.">
+{% endblock %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/omOss.css' %}">
+<div class="mainContainer">
+	<div class="welcome_container">
+		<h1>Om oss</h1>
+		<p>
+			Casinoblogg.se är en oberoende sajt. Vi publicerar, recenserar och skriver artiklar om online
+			casinon som erbjuds på den svenska spelmarknaden och vårt mål är att all information som ni
+			kan tänkas behöva/letar efter ska finnas här.
+			<br><br>
+			Då spelmarknaden är en väldigt bred bransch kommer det även att finnas innehåll om andra
+			spel än casino. Lotto och sportbetting är branscher som har vuxit enormt online de senaste
+			åren och utgör därför en del av innehållet här.
+		</p>
+		<h3>Vill du annonsera hos oss?</h3>
+		<p>
+			Har du en blogg eller en webbsajt som du vill ska synas på casino.blogg finns det möjlighet
+			att annonsera här. Vi säljer annonsplatser och länkar. Om ni skulle behöva hjälp med att
+			skriva en kort artikel, som ni skulle vilja publicera på casinoblogg, kan vi även hjälpa till med
+			det.
+			<br>
+			För vidare information kontakta: 
+		</p>
+	</div>
+</div>
+{% endblock %}

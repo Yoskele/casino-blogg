@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block title %} Onlinespel på den svenska spelmarknaden | Casinoblogg.se {% endblock %}
+{% block extra_head %}
+<meta name="description" content="Ta hjälp av Casinoblogg.se för att få information om allt som berör
+olika sorters online spel på den svenska spelmarknaden. Nya artiklar kommer ideligen upp.">
+{% endblock %}
+{% block content %} 
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/casino_spel.css' %}">
+<div class="mainContainer">
+	<div class="welcome_container">
+		<h1>Casinospel online</h1>
+		<p>
+			<b style="color:#414141;">Casinospel online</b> är ett populärt nöje hos många och det är mycket tack vare <b style="color:#414141;">nätcasinonas</b> breda spelsortiment, som möjliggjorts med samarbete med världens främsta spelleverantörer som NetEnt, Yggdrasil, Play n´Go och MicroGaming för att bara nämna några stycken.
+			<br><br>
+			Alla casinobolag med självaktning har idag ett basutbud av olika spel som kunderna förväntar sig ska finnas på ett online casino. I det här utbudet tillhör självklart ett stort antal slots med olika teman och slots med progressiva jackpottar, olika bordsspel där online casino BlackJack, Roulette, Baccarat och Poker är självklara inslag, och dessa bordsspel måste även kunna spelas live. De senaste åren har betting på olika sporter blivit allt mer populärare och är nu ett vanligt inslag hos casinobolagen.
+		</p>
+	</div>
+	<br>
+	<div class="content_container">
+		<h3>Casino online 2020</h3>
+		<p>
+			Utbudet av <b style="color:#414141;">nätcasinon online år 2020</b> har aldrig varit så omfattande som det är nu och de casinospel som erbjuds ger <b style="color:#414141;">häftiga spelupplevelser</b> som det är lätt att leva in sig i tack vare grafiken. Men tro inte att det är enbart <b style="color:#414141;">nya casinospel</b> som är på spelarnas favoritlistor utan där finns även äldre spel, som har underhållit spelare under flera år.
+			<br><br>
+			För att kunna konkurrera på spelmarknaden håller casinona stenhård koll på vilka casinospel som släpps ut på marknaden och de spelbolag som är en av de första med att erbjuda ett spel, som senare visar sig bli en hit bland spelarna, får en enorm publicitet.
+			<br><br>
+			Som du säkert har förstått så är <a href="https://www.xn--jmfrcasino-q5a2t.se/casino-utan-konto/">online spelmarknaden</a> helt annorlunda idag jämfört med tiden då gammaldags spelautomater, där spelaren drog i en spak och några enkla symboler snurrade runt på automatens skärm, var inne. Nu för tiden är utbudet mycket mer sofistikerat och många spel är animerade och har medryckande musik i bakgrunden och i de olika live bordsspelen kan spelarna chatta med den levande croupiern och de andra spelarna som deltar i bordsspelet. För de som älskar betting kan man med dagens teknik befinna sig långt från de spelade matcherna och ändå vara med och betta under pågående matcherna.
+		</p>
+		<h3> Casinospel utan registrering</h3>
+		<p>
+			Det fina med många casinobolag är att de tillåter spelare att <b style="color:#414141;">demospela gratis</b> utan att behöva registrera sig på sajten. På detta sätt kan spelaren se om slotet är ett spel som hen skulle vilja satsa pengar på. Spelen kan inte demospelas till fullo utan endast en liten del, men ändå tillräckligt för att få en uppfattning om innehåll, design och speleffekter.
+		</p>
+		<h3>Spela casinospel i mobilen </h3>
+		<p>
+			En del <b style="color:#414141;">casinosajter</b> har appar som spelaren kan ladda ner för att spelen ska fungera optimalt på mobilen och på iPaden. Men med dagens teknik fungerar de flesta casinosajternas spel väl på mobila enheter och det behövs inga nerladdade appar.
+		</p>
+	</div>
+	<br>
+	<h3 style="border-bottom:1px solid lightgray;"> Nyheter </h3>
+	<div class="news_container">
+		{% for article in articles %}
+			<div class="newContainerFlex">
+				<div class="new_image_container">
+					<img src="{{article.image.url}}" alt="{{article.name}}">
+				</div>
+				<div class="new_content_container">
+					<span class="mini_title_container"><b>{{article.name|safe}}</b> <p> {{article.date}}</p></span>
+					<p>
+						{{article.intro_text|safe}}
+					</p>
+					<div class="read_more_button" id="{{article.id}}">
+						 Läs mer
+						<div class="article_container" style="display:none;">
+							<div class="paper_wrapper">
+								<img src="{{article.image.url}}">
+								<h2>{{article.name}}</h2>
+								<p>{{article.content|safe}}</p>
+								<label>{{article.date}}</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+	<hr>
+	<div class="casinosContainer">
+		{% for casino in casino_suppliers %}
+			<div class="casino_container">
+				<div class="casino_image_container">
+					<img src="{{casino.image.url}}" alt="{{casino.name}}">
+				</div>
+				<b> {{casino.bonus|safe}}</b>
+				<a href="{{casino.link|safe}}" style="color:#007bff;"> Till {{casino.name}}</a>
+				<label>{{casino.warning_label|safe}}</label>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+<script>
+let containers = document.querySelectorAll('.read_more_button');
+containers.forEach( (container) =>{
+	let article = container.children[0];
+	container.addEventListener('click', (event) =>{
+		if (article.style.display == "none") {
+			article.style.display = "block";
+			closeWindow = document.createElement('div');
+			closeWindow.setAttribute('class', 'closeWindow')
+			let cross = '❌';
+			closeWindow.append(cross)
+			article.children[0].append(closeWindow);
+		} else {
+			article.style.display = "none";
+		}
+	})
+})
+
+</script>
+{% endblock %}

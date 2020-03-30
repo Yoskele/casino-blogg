@@ -1,0 +1,188 @@
+.mainContainer{
+	border:1px solid lightgray;
+	width:60%;
+	margin:5px auto 5px auto;
+	padding:10px;
+}
+.mainContainer h3{
+	color:#414141;
+}
+.welcome_container{
+	text-align:center;
+	width:80%;
+	margin:10px auto 10px auto;
+	border-bottom:1px solid lightgray;
+}
+.welcome_container h1{
+	font-size:1.5em;
+	color:#414141;
+}
+.content_container{
+	width:90%;
+	margin:10px auto 10px auto;
+}
+.content_container h3{
+	margin-bottom:0px;
+}
+.content_container p{
+ 	line-height:1.4;
+}
+.news_container{
+	width:80%;
+	margin:0px auto 10px auto;
+}
+.newContainerFlex{
+	display:flex;
+	flex-wrap:wrap;
+	border-top:1px solid lightgray;
+	border-bottom:1px solid lightgray;
+	width:90%;
+	margin:10px auto 10px auto;
+	padding:5px;
+}
+.new_image_container{
+	width:250px;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	overflow:none;
+}
+.new_image_container img{
+	width:200px;
+}
+.new_content_container{
+	flex:1;
+	padding:10px;
+}
+.mini_title_container{
+	display:flex;
+	justify-content:space-between;
+	margin:0;
+}
+.mini_title_container p{
+	margin:0;
+	color:#0B203D;
+}
+.new_content_container b{
+	font-style:italic;
+	color:#414141;
+}
+.read_more_button{
+	float:right;
+	color:rgb(85, 26, 139);
+}
+.read_more{
+	color:#0B203D;
+	cursor:pointer;
+}
+.article_container{
+  	position:absolute;
+  	top:0;
+  	left:0;
+  	width:100%;
+  	height:100%;
+  	margin:0;
+  	background-color: rgba(152,152,152,0.8);
+}
+.paper_wrapper{
+	border-radius:5px;
+	position:sticky;
+	border:1px solid lightgray;
+	width:40%;
+	top:80px;
+	margin:0 auto 0 auto;
+	padding:20px;
+	padding-bottom:30px;
+	box-shadow: 4px 3px #505050;
+	background:#f9f3d8;
+	line-height:1.7em;
+	font-size:1.1em;
+	color:#414141;
+}
+.closeWindow:hover{
+	transform:scale(1.2)
+}
+.closeWindow{
+	position:absolute;
+	top:2px;
+	right:2px;
+}
+.paper_wrapper img{
+	width:300px;
+	height:250px;
+	float:right;
+	padding:15px;
+}
+.paper_wrapper label{
+	float:right;
+}
+.casinosContainer{
+	width:90%;
+	margin:20px auto 20px auto;
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-between;
+}
+.casino_container{
+	width:280px;
+	height:250px;
+	border:1px solid lightgray;
+	border-radius:10px;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:space-between;
+}
+.casino_image_container{
+	width:270px;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+}
+.casino_container img{
+	width:250px;
+	height:100px;
+	margin-top:5px;
+	border-radius:10px;
+}
+.casino_container b{
+	text-align:center;
+	padding:5px;
+	color:#414141;
+}
+.casino_container a{
+	text-decoration:none;
+}
+.casino_container label{
+	text-align:center;
+	font-size:0.8em;
+}
+@media (max-width:1650px){
+	.mainContainer{
+		width:95%;
+	}
+	.casinosContainer{
+		width:95%;
+	}
+}
+@media (min-width:450px){
+	.welcome_container{
+		text-align:center;
+		width:95%;
+		margin:0;
+	}
+	.welcome_container h1{
+		font-size:30px;
+		color:#414141;
+	}
+	.news_container{
+		width:99%;
+	}
+	.content_container{
+		width:95%;
+	}
+	.content_container h3{
+		text-align:center;
+	}
+}

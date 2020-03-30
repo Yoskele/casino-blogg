@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% block title %} Casinonyheter online: nytt från spelvärlden | Casinoblogg.se {% endblock %}
+{% block extra_head %}
+<meta name="description" content="På Casinobloggen.se finns nyheter från casino- och spelvärlden. Här
+finns allt möjligt relaterat till svenska spelmarknaden; intressanta artiklar &guider.">
+{% endblock %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<div class="mainContainer">
+	<!-- <div class="casinosContainer">
+		{% for casino in casino_suppliers %}
+			<div class="casino_container">
+				<div class="casino_image_container">
+					{% if casino.image %}
+						<img src="{{casino.image.url}}" alt="{{casino.name}}">
+					{% endif %}
+				</div>
+				<b> {{casino.bonus|safe}}</b>
+				<a href="{{casino.link|safe}}" style="color:#007bff;"> Till {{casino.name}}</a>
+				<label>{{casino.warning_label|safe}}</label>
+			</div>
+		{% endfor %}
+	</div> -->
+	<br>
+	<div class="welcome_container">
+		<h1>Välkommen till casino blogg.se!</h1> Vi strävar efter att ge tillgång till <b style="color:#414141">senaste casino nyheter</b> i
+		form av recensioner, artiklar, casino online guider och allt annat smått och gott från online
+		casinovärlden. Det händer dagligen någonting inom spelvärlden och tyvärr finns det ingen
+		möjlighet för oss att publicera allting, så vi kommer istället att välja de nyheter som vi tror
+		intresserar er mest och som ni kan ta del av via era mobila enheter.
+		<br><br>
+		Spelkunderna kan välja mellan två sorters casinospelbolag;
+		<br>
+		de som har svensk spellicens eller
+		de casino online som inte har spelpaus, alltså inte har svensk spellicens.
+	</div>
+	<h3 style="border-bottom:1px solid lightgray;"> Senaste Nyheter </h3>
+	<div class="news_container">
+		{% for article in articles %}
+			<div class="newContainerFlex">
+				<div class="new_image_container">
+					{% if article.image %}
+						<img src="{{article.image.url}}" alt="{{article.name}}">
+					{% endif %}
+				</div>
+				<div class="new_content_container">
+					<span class="mini_title_container"><b>{{article.name|safe}}</b> <p> {{article.date}}</p></span>
+					<p>
+						{{article.intro_text|safe}}
+					</p>
+					<a class="read_more_button" href="{{article.link}}"> Läs mera </a>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+	<hr>
+	<div class="content_container">
+		<h3>Hur många online casino finns det?</h3>
+		<p>
+			Det finns ett <b style="color:#414141;">stort antal casinon på nätet</b> och det tar alldeles för lång tid att gå igenom dem alla innan man hittar sin egen favorit. 
+			<br>
+			Vi vill underlätta sökprocessen genom att ge så korrekt information som möjligt så att var och en kan <a href="https://www.sveacasino.se/sa-valjer-du-ratt-casino">välja det rätta casinot på nätet.</a> Med hjälp av aktuella artiklar får ni bl a tips om de senaste <b style="color:#414141;">intressanta online spelen</b> och om online <b style="color:#414141;">casinon som har snabba registreringar och uttag</b> som gör spelprocessen smidigare.
+			<br><br>
+			Det vi kan säga är att det finns ett nätcasino för alla smaker och tycken och för att spelare ska kunna hitta sitt eget <b style="color:#414141;">favoritcasino</b> försöker vi hjälpa till genom att ge så allsidig <a href="https://casinoinformation.se/">casinoinformation</a> som möjligt.
+		</p>
+		<br>
+		<h3>Vilket är Sveriges bästa nätcasino?</h3>
+		<p>	
+			Vid en snabb genomgång verkar det som om alla nätcasinona är likadana, men vid en närmare granskning ser man att det finns en hel del saker som skiljer sig åt. Alla online casinona har koncentrerat sig på att vara bäst i någon speciell nisch. 
+			<br><br>
+			Eftersom spelare kan vara ute efter ett <b style="color:#414141;">online casino utan omsättningskrav,</b><b style="color:#414141;"> casino utan insättningskrav</b> eller <b style="color:#414141;">nätcasino utan registrering</b> eller vill att nätcasinot ska ha ett <b style="color:#414141;">stort spelutbud</b> för att det ska vara värt ett besöka, är det svårt att säga vilket online casino som är bäst på den svenska spelmarknaden. Det är helt enkelt upp till spelaren att bestämma vilket <b style="color:#414141;">online casino som är bäst.</b>
+		</p>
+		<br>
+		<h3>Hur väljer man rätt casino på nätet?</h3>
+		<p>
+			När det finns ett <b style="color:#414141;">stort utbud av casinospel</b> måste spelaren först vara klar med vilken sorts spel hen är intresserad av. Om det är slots, spelautomater, med ett speciellt tema som lockar kanske det är endast ett fåtal casinon som erbjuder spelet ifråga. Även när det kommer till live spel finns det skillnader hos de olika casinobolagens utbud.
+			<br><br>
+			Om spelaren är intresserad av att få <b style="color:#414141;">bra casinobonus</b> måste casinoerbjudandena granskas noga så att det <b style="color:#414141;">rätta casinot</b> väljs ut.
+			<br>
+			För att du inte ska behöva lägga ner dyrbar tid på att leta efter det rätta nätcasinot i denna speldjungel är det bra att ta hjälp av casinoguider som finns i detta casinoblogg.
+		</p>
+	</div>
+</div>
+<script>
+
+let buttons = document.querySelectorAll('.read_more_button');
+console.log(buttons)
+buttons.forEach( (button) => {
+	if (button.href.includes('empty')) { 
+  		button.remove();
+	}
+})
+
+
+function validateContent(article, link, id){
+	let aTag = document.getElementById(id).parentElement.children[2];
+	if(article === ''){
+		if(link !== ''){
+			window.location.href = link;
+		}else{
+			aTag.remove();
+		}
+	}else if ( article !== ''){
+		// if article is Not empty do this.
+		let article = document.getElementById(id);
+		article.style.display = 'block';
+		closeWindow = document.createElement('div');
+		closeWindow.setAttribute('class', 'closeWindow')
+		let cross = '❌';
+		closeWindow.append(cross)
+		article.children[0].append(closeWindow);
+		article.addEventListener('click', () =>{
+			article.style.display = "none"
+		})
+	}
+}
+
+// let containers = document.querySelectorAll('.read_more_button');
+// containers.forEach( (container) =>{
+// 	let article = container.children[0];
+// 	container.addEventListener('click', (event) =>{
+// 		if (article.style.display == "none") {
+// 			article.style.display = "block";
+// 			closeWindow = document.createElement('div');
+// 			closeWindow.setAttribute('class', 'closeWindow')
+// 			let cross = '❌';
+// 			closeWindow.append(cross)
+// 			article.children[0].append(closeWindow);
+// 		} else {
+// 			article.style.display = "none";
+// 		}
+// 	})
+// })
+
+
+</script>
+{% endblock %}

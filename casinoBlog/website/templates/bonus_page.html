@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% block title %} Vad är syftet med olika online spelbonusar? | Casinoblogg.se {% endblock %}
+{% block extra_head %}
+<meta name="description" content="Casinobolag erbjuder bonus, oftast i form av en välkomstbonus, och
+Free Spins för att få in nya kunder. Men storleken på bonusarna kan variera rätt kraftigt.">
+{% endblock %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/bonus_page.css' %}">
+<div class="mainContainer">
+	<div class="welcome_container">
+		<h1>Casinobonusar</h1>
+		<p>
+			De flesta nätcasinona erbjuder olika sorters <b style="color:#414141;">casinobonusar</b> och dessa erbjudanden finns under en begränsad tid tills de ersätts av nya <b style="color:#414141;">casinokampanjer.</b>. Vad de olika erbjudandena innehåller är upp till varje casinobolag att bestämma.
+			<br>
+			Om bonusarna är viktiga för spelarna lönar det sig att lägga ner lite tid på att se över de olika <b style="color:#414141;">bonuserbjudandena</b> då de skiljer sig åt en hel del.
+		</p>
+	</div>
+	<br>
+	<div class="content_container">
+		<h3>Vad är syftet med casinobonusar?</h3>
+		<p>
+			Det råder stor konkurrens om kunderna inom casinovärlden och de flesta casinona vill locka till sig så många nya kunder som möjligt genom att ge en <a href="https://bastacasinobonus.se/">häftig bonus</a> i form av en <b style="color:#414141;">välkomstbonus.</b> Ju generösare en bonus är desto fler spelare lockas till casinobolagets sajt.
+			<br><br>
+			Och självklart är casinospelarna fullt medvetna om bonuskriget och därför kollar de noga upp de olika bonuserbjudandena innan de <a href="https://casinoupplevelse.se/">registrerar sig på ett casino.</a> Det gäller ju att få till en så bra deal som möjligt. Casinobonusen ger spelaren chans att spela för mer än det egna insatta beloppet, vilket är till spelarens fördel eftersom fler spel innebär större chans att vinna.
+		</p>
+		<br>
+		<h3>Vad är en casino välkomstbonus?</h3>
+		<p>
+			En välkomstbonus kan bestå av att spelbolaget matchar spelarens <b style="color:#414141;">första insättning.</b> Casinobolaget kan till exempel matcha en insättning på 1 000 kr med 100 % vilket betyder att spelaren har 2 000 kr att spela för i slutändan. På ett sätt kan man säga att spelaren kan spela <b style="color:#414141;">casino gratis</b> med den givna bonusen. Med en större spelbudget kan man t. ex. välja att öka på insatsen, vilket leder till att vinsterna är också större eller välja att spela en längre tid med mindre insatser, men med mindre vinster.
+		</p>
+		<br>
+		<h3>Casino Free Spins</h3>
+		<p>
+			En annan bonus som erbjuds flitigt av casinobolag är <a href="https://www.svenskkasinon.se/free-spins/">Free Spins,</a> som är gratis snurr på spelautomater eller så kallade slots. Ofta delas de ut av casinobolaget som ett sätt att locka kunderna att spela på vissa casinospel, som casinobolaget väljer ut som ett sätt att marknadsföra vissa spel. Även Free Spins har oftast omsättningskrav, så det innebär att spelaren måste spela vinsterna ett visst antal gånger innan de är uttagsbara.
+		</p>
+		<br>
+		<h3>Finns det casino online med välkomstbonus utan insättningskrav?</h3>
+		<p>	
+			Det finns en del casinokampanjer som ger spelaren en välkomstbonus utan krav på insättning. Det enda kravet är att kunden registrerar ett konto hos casinobolaget och sedan sätts bonusen in på spelkontot som hen kan spela för. Dessa bonusar är inte på långa vägar så stora som bonusar med insättningskrav är.
+			<br><br>
+			Bonus utan insättningskrav är ett utmärkt sätt att bekanta sig med casinot och samtidigt spela utan att riskera sina egna pengar. Bonusar utan insättningskrav dyker inte upp så ofta och när de väl gör det kan det vara så att spelaren måste ange en speciell bonuskod vid registreringen och sedan sätts bonusen direkt in på spelkontot.
+		</p>
+		<br>
+		<h3>Vad är ett casino omsättningskrav?</h3>
+		<p>
+			Bonuspengarna som spelaren får i välkomstpresent är ofta, med några speciella undantag, knutna till <b style="color:#414141;">ett visst antal omsättningskrav</b> som går ut på att spelaren måste spela och omsätta pengarna och de vinster som genereras med bonuspengarna ett visst antal gånger innan de kan tas ut. Spelföretaget bestämmer hur stora omsättningskraven är och när <b style="color:#414141;">casinots omsättningskrav</b> är uppnått, så är det först då som spelaren kan ta ut de vinster som har gjorts med bonuspengarna.
+			<br><br>
+			De allra flesta bonusarna har en tidsgräns. Om spelaren inte har använt bonusen eller omsatt dem tillräckligt många gånger inom den satta tidsramen förfaller alla bonusen och även vinsterna som har gjorts med de bonusar som redan är omsatta.
+		</p>
+	</div>
+	<br>
+	<h3 style="border-bottom:1px solid lightgray;"> Nyheter </h3>
+	<div class="news_container">
+		{% for article in articles %}
+			<div class="newContainerFlex">
+				<div class="new_image_container">
+					<img src="{{article.image.url}}" alt="{{article.name}}">
+				</div>
+				<div class="new_content_container">
+					<span class="mini_title_container"><b>{{article.name|safe}}</b> <p> {{article.date}}</p></span>
+					<p>
+						{{article.intro_text|safe}}
+					</p>
+					<div class="read_more_button" id="{{article.id}}">
+						 Läs mer
+						<div class="article_container" style="display:none;">
+							<div class="paper_wrapper">
+								<img src="{{article.image.url}}">
+								<h2>{{article.name}}</h2>
+								<p>{{article.content|safe}}</p>
+								<label>{{article.date}}</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+	<hr>
+	<div class="casinosContainer">
+		{% for casino in casino_suppliers %}
+			<div class="casino_container">
+				<div class="casino_image_container">
+					<img src="{{casino.image.url}}" alt="{{casino.name}}">
+				</div>
+				<b> {{casino.bonus|safe}}</b>
+				<a href="{{casino.link|safe}}" style="color:#007bff;"> Till {{casino.name}}</a>
+				<label>{{casino.warning_label|safe}}</label>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+<script>
+let containers = document.querySelectorAll('.read_more_button');
+containers.forEach( (container) =>{
+	let article = container.children[0];
+	container.addEventListener('click', (event) =>{
+		if (article.style.display == "none") {
+			article.style.display = "block";
+			closeWindow = document.createElement('div');
+			closeWindow.setAttribute('class', 'closeWindow')
+			let cross = '❌';
+			closeWindow.append(cross)
+			article.children[0].append(closeWindow);
+		} else {
+			article.style.display = "none";
+		}
+	})
+})
+</script>
+{% endblock %}

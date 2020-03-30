@@ -1,0 +1,48 @@
+
+.mainContainer{
+	border:1px solid lightgray;
+	width:60%;
+	margin:5px auto 5px auto;
+	padding:10px;
+ 	min-height: calc(100vh - 70px);
+}
+.mainContainer h3{
+	color:#414141;
+}
+.welcome_container{
+	text-align:center;
+	width:80%;
+	margin:10px auto 10px auto;
+	border-bottom:1px solid lightgray;
+}
+.welcome_container h1{
+	font-size:1.5em;
+	color:#414141;
+}
+.content_container{
+	width:90%;
+	margin:10px auto 10px auto;
+}
+footer {
+	height:100%;
+}
+.footer_container{
+	bottom:0;
+	width:90%;
+	margin:0px auto 0px auto;
+	display:flex;
+	flex-wrap:wrap;
+}
+.footer_container h3{
+	width:100%;
+}
+.contact_container{
+	width:30%;
+}
+.contact_container a{
+	color:white;
+}
+.sponsor_container a{
+	color:white;
+	margin:5px;
+}
