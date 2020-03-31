@@ -25,7 +25,10 @@ SECRET_KEY = '%tl+u3iq)j_=qh$+d7g^j$bymjmrwoov^vtu&dh0confjc25fa'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'www.casino-blogg.se',
+    '*'
+]
 
 
 # Application definition
