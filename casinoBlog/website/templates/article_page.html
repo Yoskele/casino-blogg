@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}  {% endblock %}
+{% block extra_head %}
+<meta name="description" content="">
+{% endblock %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/article_page.css' %}">
+<div class="mainContainer">
+	<div class="content_container">
+		<h1> {{article.name}} </h1>
+		{% if article.image %}
+			<img src="{{article.image.url}}">
+		{% endif %}
+		<p> {{article.intro_text|safe}}</p>
+		<p> {{article.content|safe}}</p>
+		<label> {{article.date}}</label>
+	</div>
+	<hr>
+	<div class="news_container">
+		{% for old_article in all_articles %}
+			<div class="newContainerFlex">
+				<div class="new_image_container">
+					{% if old_article.image %}
+						<img src="{{old_article.image.url}}" alt="{{old_article.name}}">
+					{% endif %}
+				</div>
+				<div class="new_content_container">
+					<span class="mini_title_container"><b>{{old_article.name|safe}}</b> <p> {{old_article.date}}</p></span>
+					<p>
+						{{old_article.intro_text|safe}}
+					</p>
+
+					<a class="read_more_button" href="{% url 'website:article_page' slug=old_article.slug %}"> Läs mera </a>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+<script>
+
+</script>
+{% endblock %}

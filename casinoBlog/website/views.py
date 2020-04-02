@@ -25,5 +25,14 @@ def casino_spel(request):
 		'casino_suppliers':casino_suppliers,
 	}
 	return render(request, 'casino_spel.html', context)
+def article_page(request, slug):
+	article = Article.objects.get(slug=slug)
+	print(article.id)
+	all_articles = Article.objects.all().exclude(id = article.id).order_by('-date')[:4]
+	context = {
+		'article':article,
+		'all_articles':all_articles,
+	}
+	return render(request, 'article_page.html', context)
 def omOss(request):
 	return render(request, 'omOss.html')

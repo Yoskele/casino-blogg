@@ -49,7 +49,8 @@ finns allt möjligt relaterat till svenska spelmarknaden; intressanta artiklar &
 					<p>
 						{{article.intro_text|safe}}
 					</p>
-					<a class="read_more_button" href="{{article.link}}"> Läs mera </a>
+
+					<a class="read_more_button" href="{% url 'website:article_page' slug=article.slug %}"> Läs mera </a>
 				</div>
 			</div>
 		{% endfor %}

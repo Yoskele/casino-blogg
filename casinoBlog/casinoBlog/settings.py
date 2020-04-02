@@ -26,7 +26,8 @@ SECRET_KEY = '%tl+u3iq)j_=qh$+d7g^j$bymjmrwoov^vtu&dh0confjc25fa'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'www.casino-blogg.se'
+    'www.casino-blogg.se',
+    '*'
 ]
 
 

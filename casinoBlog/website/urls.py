@@ -10,4 +10,5 @@ urlpatterns = [
 	path('casino-bonus/', views.bonus_page, name="bonus_page"),
 	path('casino-spel-slots/', views.casino_spel, name="casino_spel"),
 	path('om-oss/', views.omOss, name="omOss"),
+	path('artikel-<slug>/', views.article_page, name="article_page"),
 ]
