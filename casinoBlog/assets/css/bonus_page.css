@@ -168,6 +168,9 @@
 	}
 }
 @media (min-width:450px){
+	.mainContainer{
+		box-sizing: border-box;
+	}
 	.welcome_container{
 		text-align:center;
 		width:95%;
