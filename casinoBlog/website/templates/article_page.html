@@ -10,7 +10,7 @@
 	<div class="content_container">
 		<h1> {{article.name}} </h1>
 		{% if article.image %}
-			<img src="{{article.image.url}}">
+			<img src="{{article.image.url}}" alt="{{article.name}}">
 		{% endif %}
 		<p> {{article.intro_text|safe}}</p>
 		<p> {{article.content|safe}}</p>
