@@ -85,55 +85,6 @@ finns allt möjligt relaterat till svenska spelmarknaden; intressanta artiklar &
 </div>
 <script>
 
-let buttons = document.querySelectorAll('.read_more_button');
-console.log(buttons)
-buttons.forEach( (button) => {
-	if (button.href.includes('empty')) { 
-  		button.remove();
-	}
-})
-
-
-function validateContent(article, link, id){
-	let aTag = document.getElementById(id).parentElement.children[2];
-	if(article === ''){
-		if(link !== ''){
-			window.location.href = link;
-		}else{
-			aTag.remove();
-		}
-	}else if ( article !== ''){
-		// if article is Not empty do this.
-		let article = document.getElementById(id);
-		article.style.display = 'block';
-		closeWindow = document.createElement('div');
-		closeWindow.setAttribute('class', 'closeWindow')
-		let cross = '❌';
-		closeWindow.append(cross)
-		article.children[0].append(closeWindow);
-		article.addEventListener('click', () =>{
-			article.style.display = "none"
-		})
-	}
-}
-
-// let containers = document.querySelectorAll('.read_more_button');
-// containers.forEach( (container) =>{
-// 	let article = container.children[0];
-// 	container.addEventListener('click', (event) =>{
-// 		if (article.style.display == "none") {
-// 			article.style.display = "block";
-// 			closeWindow = document.createElement('div');
-// 			closeWindow.setAttribute('class', 'closeWindow')
-// 			let cross = '❌';
-// 			closeWindow.append(cross)
-// 			article.children[0].append(closeWindow);
-// 		} else {
-// 			article.style.display = "none";
-// 		}
-// 	})
-// })
-
 
 </script>
 {% endblock %}

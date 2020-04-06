@@ -78,22 +78,7 @@ olika sorters online spel på den svenska spelmarknaden. Nya artiklar kommer ide
 	</div>
 </div>
 <script>
-let containers = document.querySelectorAll('.read_more_button');
-containers.forEach( (container) =>{
-	let article = container.children[0];
-	container.addEventListener('click', (event) =>{
-		if (article.style.display == "none") {
-			article.style.display = "block";
-			closeWindow = document.createElement('div');
-			closeWindow.setAttribute('class', 'closeWindow')
-			let cross = '❌';
-			closeWindow.append(cross)
-			article.children[0].append(closeWindow);
-		} else {
-			article.style.display = "none";
-		}
-	})
-})
+
 
 </script>
 {% endblock %}
