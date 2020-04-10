@@ -28,7 +28,7 @@ def casino_spel(request):
 def article_page(request, slug):
 	article = Article.objects.get(slug=slug)
 	lastArticle = Article.objects.last()
-	olderArticles = Article.objects.exclude(name=article.name).filter(id__lte=article.id).order_by('-date')
+	olderArticles = Article.objects.exclude(name=article.name).filter(id__lte=article.id).order_by('-automated_date')
 	context = {
 		'article':article,
 		'olderArticles':olderArticles,

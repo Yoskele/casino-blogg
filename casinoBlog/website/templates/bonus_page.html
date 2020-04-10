@@ -63,7 +63,7 @@ Free Spins för att få in nya kunder. Men storleken på bonusarna kan variera r
 						{{article.intro_text|safe}}
 					</p>
 					<div class="read_more_button" id="{{article.id}}">
-						 Läs mer
+						<a class="read_more_button" href="{% url 'website:article_page' slug=article.slug %}"> Läs mera </a>
 						<div class="article_container" style="display:none;">
 							<div class="paper_wrapper">
 								<img src="{{article.image.url}}">

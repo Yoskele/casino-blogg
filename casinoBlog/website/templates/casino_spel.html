@@ -49,7 +49,7 @@ olika sorters online spel på den svenska spelmarknaden. Nya artiklar kommer ide
 						{{article.intro_text|safe}}
 					</p>
 					<div class="read_more_button" id="{{article.id}}">
-						 Läs mer
+						<a class="read_more_button" href="{% url 'website:article_page' slug=article.slug %}"> Läs mera </a>
 						<div class="article_container" style="display:none;">
 							<div class="paper_wrapper">
 								<img src="{{article.image.url}}">

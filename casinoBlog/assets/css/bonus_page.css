@@ -103,7 +103,6 @@
 	float:right;
 	color:rgb(85, 26, 139);
 }
-
 .content_container{
 	width:70%;
 	margin:10px auto 10px auto;
@@ -117,6 +116,22 @@
 	}
 	.casinosContainer{
 		width:95%;
+	}
+	.casino_container{
+		width:200px;
+		height:200px;
+	}
+	.casino_image_container{
+		width:270px;
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+	}
+	.casino_container img{
+		width:180px;
+		height:50px;
+		margin-top:5px;
+		border-radius:10px;
 	}
 }
 @media (max-width:450px){
@@ -143,5 +158,11 @@
 	}
 	.content_container h3{
 		text-align:center;
+	}
+	.casino_container{
+		width:250px;
+	}
+	.casino_container{
+		margin:5px auto 5px auto;
 	}
 }
